@@ -1,7 +1,6 @@
-package com.aywm.tool;
+package com;
 
-import org.bytedeco.javacv.FrameGrabber;
-import org.bytedeco.javacv.OpenCVFrameGrabber;
+import com.aywm.tool.exchange.biword.BiWordBootStrap;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +13,8 @@ public class ToolApplication {
         springApplication.setWebApplicationType(WebApplicationType.NONE);
         springApplication.run(args);
 
-        FrameGrabber g = new OpenCVFrameGrabber("");
+        //币世界 技术监听
+        BiWordBootStrap.start();
 
     }
 

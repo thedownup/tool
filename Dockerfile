@@ -5,7 +5,7 @@ FROM 632443784/future:v1
 VOLUME /tmp
 
 #复制上下文目录下的target/demo-1.0.0.jar 到容器里
-COPY *.jar tool-0.0.1-SNAPSHOT.jar
+COPY target/*.jar tool-0.0.1-SNAPSHOT.jar
 
 #指定容器启动程序及参数   <ENTRYPOINT> "<CMD>"
 ENTRYPOINT ["java","-jar","tool-0.0.1-SNAPSHOT.jar"]
