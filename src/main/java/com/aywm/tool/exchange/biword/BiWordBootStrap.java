@@ -49,8 +49,9 @@ public class BiWordBootStrap {
      * 版本: 1.0
      */
     public static List<String> getListenerCoinNames() {
-        return Lists.newArrayList("bitcoin", "ethereum", "ripple", "litecoin",
-                "bitcoin-cash", "qtum", "ethereum-classic", "eos", "bitcoin-cash-sv");
+//        return Lists.newArrayList("bitcoin", "ethereum", "ripple", "litecoin",
+//                "bitcoin-cash", "ethereum-classic", "eos", "bitcoin-cash-sv");
+        return Lists.newArrayList("bitcoin", "bitcoin-cash-sv", "litecoin", "bitcoin-cash");
     }
 
     /**
@@ -87,6 +88,8 @@ public class BiWordBootStrap {
                     Map<String, Object> coinSkillTableM30 = getCoinSkillTable(coinName, GranularityEnum.M30);
                     SkillTableInfo skillTableInfoM5 = getInfoMap(coinSkillTableM5);
                     SkillTableInfo skillTableInfoM30 = getInfoMap(coinSkillTableM30);
+
+                    log.info("监听{} skillTableInfoM5={}", skillTableInfoM5.getCoinPair(), skillTableInfoM5);
 
                     int threshold = 15;
                     //强烈买入

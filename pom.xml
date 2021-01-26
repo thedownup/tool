@@ -154,6 +154,20 @@
             <artifactId>wxpusher-java-sdk</artifactId>
             <version>2.1.4</version>
         </dependency>
+
+        <!-- YouTube Data V3 support -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>v3-rev182-1.22.0</version>
+        </dependency>
+
+        <!-- Required for any code that makes calls to the YouTube Reporting API -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtubereporting</artifactId>
+            <version>v1-rev10-1.22.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -170,47 +184,47 @@
                     </excludes>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>com.spotify</groupId>-->
-<!--                <artifactId>docker-maven-plugin</artifactId>-->
-<!--                <version>1.0.0</version>-->
-<!--                &lt;!&ndash;将插件绑定在某个phase执行&ndash;&gt;-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>build-image</id>-->
-<!--                        &lt;!&ndash;将插件绑定在package这个phase上。也就是说，用户只需执行mvn package ，就会自动执行mvn docker:build&ndash;&gt;-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    &lt;!&ndash;指定生成的镜像名&ndash;&gt;-->
-<!--                    <imageName>aywm/${project.artifactId}</imageName>-->
-<!--                    &lt;!&ndash;指定标签&ndash;&gt;-->
-<!--                    <imageTags>-->
-<!--                        <imageTag>latest</imageTag>-->
-<!--                    </imageTags>-->
-<!--                    &lt;!&ndash; 指定 Dockerfile 路径 ${project.basedir}：项目根路径下&ndash;&gt;-->
-<!--                    <dockerDirectory>${project.basedir}</dockerDirectory>-->
-<!--                    &lt;!&ndash;指定远程 docker api地址&ndash;&gt;-->
-<!--                    <dockerHost>http://101.132.183.157:2375</dockerHost>-->
-<!--                    &lt;!&ndash; 这里是复制 jar 包到 docker 容器指定目录配置 &ndash;&gt;-->
-<!--                    <resources>-->
-<!--                        <resource>-->
-<!--                            <targetPath>/</targetPath>-->
-<!--                            &lt;!&ndash;jar 包所在的路径 此处配置的 即对应 target 目录&ndash;&gt;-->
-<!--                            <directory>${project.build.directory}</directory>-->
-<!--                            &lt;!&ndash; 需要包含的 jar包 ，这里对应的是 Dockerfile中添加的文件名　&ndash;&gt;-->
-<!--                            <include>${project.build.finalName}.jar</include>-->
-<!--                        </resource>-->
-<!--                    </resources>-->
-<!--&lt;!&ndash;                    &lt;!&ndash; 以下两行是为了docker push到DockerHub使用的。 &ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                    <serverId>docker-hub</serverId>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <registryUrl>https://index.docker.io/v1</registryUrl>&ndash;&gt;-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>com.spotify</groupId>-->
+            <!--                <artifactId>docker-maven-plugin</artifactId>-->
+            <!--                <version>1.0.0</version>-->
+            <!--                &lt;!&ndash;将插件绑定在某个phase执行&ndash;&gt;-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>build-image</id>-->
+            <!--                        &lt;!&ndash;将插件绑定在package这个phase上。也就是说，用户只需执行mvn package ，就会自动执行mvn docker:build&ndash;&gt;-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>build</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    &lt;!&ndash;指定生成的镜像名&ndash;&gt;-->
+            <!--                    <imageName>aywm/${project.artifactId}</imageName>-->
+            <!--                    &lt;!&ndash;指定标签&ndash;&gt;-->
+            <!--                    <imageTags>-->
+            <!--                        <imageTag>latest</imageTag>-->
+            <!--                    </imageTags>-->
+            <!--                    &lt;!&ndash; 指定 Dockerfile 路径 ${project.basedir}：项目根路径下&ndash;&gt;-->
+            <!--                    <dockerDirectory>${project.basedir}</dockerDirectory>-->
+            <!--                    &lt;!&ndash;指定远程 docker api地址&ndash;&gt;-->
+            <!--                    <dockerHost>http://101.132.183.157:2375</dockerHost>-->
+            <!--                    &lt;!&ndash; 这里是复制 jar 包到 docker 容器指定目录配置 &ndash;&gt;-->
+            <!--                    <resources>-->
+            <!--                        <resource>-->
+            <!--                            <targetPath>/</targetPath>-->
+            <!--                            &lt;!&ndash;jar 包所在的路径 此处配置的 即对应 target 目录&ndash;&gt;-->
+            <!--                            <directory>${project.build.directory}</directory>-->
+            <!--                            &lt;!&ndash; 需要包含的 jar包 ，这里对应的是 Dockerfile中添加的文件名　&ndash;&gt;-->
+            <!--                            <include>${project.build.finalName}.jar</include>-->
+            <!--                        </resource>-->
+            <!--                    </resources>-->
+            <!--&lt;!&ndash;                    &lt;!&ndash; 以下两行是为了docker push到DockerHub使用的。 &ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <serverId>docker-hub</serverId>&ndash;&gt;-->
+            <!--&lt;!&ndash;                    <registryUrl>https://index.docker.io/v1</registryUrl>&ndash;&gt;-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
         </plugins>
     </build>
 </project>
