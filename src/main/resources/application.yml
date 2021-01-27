@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://root:root@free-nzrai.mongodb.net/future?retryWrites=true&w=majority
+  output:
+    ansi:
+      enabled: always

@@ -1,0 +1,7 @@
+2020-12-27 16:40:26.172  INFO 3660 --- [main] com.ToolApplication                      : Starting ToolApplication using Java 1.8.0_101 on DESKTOP-61B769Q with PID 3660 (D:\zjt\ideaproject\tool\target\classes started by zjt in D:\zjt\ideaproject\tool)
+2020-12-27 16:40:26.182  INFO 3660 --- [main] com.ToolApplication                      : No active profile set, falling back to default profiles: default
+2020-12-27 16:40:29.993  INFO 3660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-27 16:40:30.971  INFO 3660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 969 ms. Found 0 MongoDB repository interfaces.
+2020-12-27 16:40:34.837  INFO 3660 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-12-27 16:40:34.891  INFO 3660 --- [main] com.ToolApplication                      : Started ToolApplication in 9.691 seconds (JVM running for 11.816)
+2020-12-27 16:40:34.901  INFO 3660 --- [main] c.a.t.exchange.biword.BiWordBootStrap    : 启动 币世界监听程序
