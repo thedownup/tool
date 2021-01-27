@@ -1,4 +1,4 @@
-package com.sapher.youtubedl.mapper;
+package com.aywm.tool.othersoft.sapher.youtubedl.mapper;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,11 +1,11 @@
-package com.sapher.youtubedl;
+package com.aywm.tool.othersoft.sapher.youtubedl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sapher.youtubedl.mapper.VideoFormat;
-import com.sapher.youtubedl.mapper.VideoInfo;
-import com.sapher.youtubedl.mapper.VideoThumbnail;
-import com.sapher.youtubedl.utils.StreamGobbler;
-import com.sapher.youtubedl.utils.StreamProcessExtractor;
+import com.aywm.tool.othersoft.sapher.youtubedl.mapper.VideoFormat;
+import com.aywm.tool.othersoft.sapher.youtubedl.mapper.VideoInfo;
+import com.aywm.tool.othersoft.sapher.youtubedl.mapper.VideoThumbnail;
+import com.aywm.tool.othersoft.sapher.youtubedl.utils.StreamGobbler;
+import com.aywm.tool.othersoft.sapher.youtubedl.utils.StreamProcessExtractor;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class YoutubeDL {
     /**
      * Youtube-dl executable name
      */
-    protected static String executablePath = "youtube-dl";
+    protected static String executablePath = "proxychains4 youtube-dl";
 
     /**
      * Append executable name to command
@@ -105,9 +105,7 @@ public class YoutubeDL {
         }
 
         int elapsedTime = (int) ((System.nanoTime() - startTime) / 1000000);
-
         youtubeDLResponse = new YoutubeDLResponse(command, options, directory, exitCode , elapsedTime, out, err);
-
         return youtubeDLResponse;
     }
 

@@ -30,7 +30,7 @@ public class QiNiuCloudUtil {
 
     //用免费的域名 30天要换一次
     private static String bucket = "baijiahao1";
-    private static String domain = "http://qluk4ku5g.hn-bkt.clouddn.com/";
+    private static String domain = "http://qnkxcxbrs.hn-bkt.clouddn.com/";
 
     /**
      * 功能: 代理端口

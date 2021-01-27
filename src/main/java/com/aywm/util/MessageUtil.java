@@ -33,6 +33,7 @@ public class MessageUtil {
         message.setContent(content + " 发送时间:" + Date8Util.format(new Date(), Date8Util.DATE_TIME));
         message.setUid(MY_UID);
         WxPusher.send(message);
+        log.info("发送消息:" + message.getContent());
     }
 
     /**
@@ -56,5 +57,6 @@ public class MessageUtil {
         }
         message.setUid(MY_UID);
         WxPusher.send(message);
+        log.info("发送消息:" + message.getContent());
     }
 }

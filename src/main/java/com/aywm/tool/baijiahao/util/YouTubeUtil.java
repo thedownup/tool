@@ -8,9 +8,11 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.YouTubeRequestInitializer;
+import com.google.api.services.youtube.model.VideoListResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.util.Map;
@@ -48,7 +50,7 @@ public class YouTubeUtil {
      * 日期: 2020/12/25 23:54
      * 版本: 1.0
      */
-    public static void getVideoList(String id, int pageSize) {
+    public void getVideoList(String id, int pageSize) {
         String url = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet,id&order=date&maxResults=%s", key, id, 10);
         System.out.println("url = " + url);
         String body = HttpRequest.get(url)
@@ -58,8 +60,17 @@ public class YouTubeUtil {
 
     }
 
-    public static void main(String[] args) {
-        getVideoList("UCNz2YbRPdGvyBq5qq7iqNwQ", 1);
+    /**
+     * 功能: 获取video详情
+     * 作者: zjt
+     * 日期: 2021/1/27 16:10
+     * 版本: 1.0
+     */
+    public VideoListResponse getVideoInfo(String videoId) throws IOException {
+        YouTube youtube = getYouTube();
+        final YouTube.Videos.List contentDetails = youtube.videos().list("contentDetails,snippet,statistics,localizations");
+        contentDetails.setId(videoId);
+        return contentDetails.execute();
     }
 
 }

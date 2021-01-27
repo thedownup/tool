@@ -1,6 +1,6 @@
-package com.sapher.youtubedl.utils;
+package com.aywm.tool.othersoft.sapher.youtubedl.utils;
 
-import com.sapher.youtubedl.DownloadProgressCallback;
+import com.aywm.tool.othersoft.sapher.youtubedl.DownloadProgressCallback;
 
 import java.io.IOException;
 import java.io.InputStream;

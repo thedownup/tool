@@ -1,5 +1,6 @@
 package com.aywm.tool;
 
+import cn.hutool.core.util.ReUtil;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -67,6 +68,14 @@ public class YoutubeTest {
     @Test
     public void test2() throws IOException {
         getVideoInfo("9bZkp7q19f0");
+    }
+
+    @Test
+    public void test3() {
+        String str = "PT41M13S";
+        System.out.println(str.toLowerCase().replaceAll("pt", ""));
+        final String bucketName = ReUtil.get("(?<=PT).*?(?=M)", str, 0);
+        System.out.println("bucketName = " + bucketName);
     }
 
     public void getVideoInfo(String videoId) throws IOException {

@@ -42,5 +42,4 @@ public enum GranularityEnum {
 
     private final int granularity;
 
-
 }
